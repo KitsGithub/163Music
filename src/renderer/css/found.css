@@ -1,0 +1,26 @@
+.tabs {
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid #e1e1e1;
+    text-align: center;
+    background-color: #fafafa;
+}
+.tabsContainer {
+    width: 470px;
+    height: 45px;
+    margin: 0px auto;
+}
+.tabsMargin {
+    margin-left: 65px;
+}
+.tabs_items {
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.tabsActive,
+.tabs_items:hover {
+    color: #b72712;
+}
+

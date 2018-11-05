@@ -1,0 +1,188 @@
+.bannerContainer {
+    width: 92%;
+    height: 200px;
+    margin-left: 4%;
+    padding-top: 20px;
+    border-radius: 5px;
+}
+.banner {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+    /* overflow: hidden; */
+}
+.bannerSpan {
+    height: 22px;
+    /* width: 60px; */
+    background-color: #b72712;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    right: -5px;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+}
+
+.bannerSpan> span {
+    font-weight: 700;
+    font-size: 12px;
+    margin-left: 13px;
+    margin-right: 8px;
+    height: 22px;
+    line-height: 22px;
+}
+
+/* 热门精选 */
+.personalized {
+    width: 92%;
+    height: 500px;
+    margin: 20px 4%;
+}
+
+.personalTitle {
+    width: 100%;
+    height: 35px;
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+}
+.personalTitle > span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 35px;
+    height: 33px;
+    display: inline-block;
+    border-bottom: 2px solid #e1e1e1;
+    color: #313131;
+}
+.personalTitle > h4 {
+    font-size: 13px;
+    margin-left: 13px;
+    color: #585858;
+    margin-top: 10px;
+}
+.personalTitle > button {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    width: 48px;
+    height: 20px;
+    border: 1px solid #d9d9d9;
+    background-color: white;
+    border-radius: 3px;
+    font-weight: 500;
+    color: #343434;
+    font-size: 12px;
+}
+
+/* cell */
+.personalItems {
+    width: 150px;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 45px;
+    position: relative;
+}
+
+.personalItems > img {
+    width: 148px;
+    height: 148px;
+    border: 1px solid #e6e6e6;
+}
+.personalItems > span {
+    font-size: 14px;
+}
+.personalItems>.cover {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.playCount {
+    width: 50%;
+    height: 20px;
+    text-align: right;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: -webkit-linear-gradient(left, rgba(254, 254, 254, 0), rgba(0, 0, 0, 0.3));  /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, rgba(254, 254, 254, 0), rgba(0, 0, 0, 0.3)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, rgba(254, 254, 254, 0), rgba(0, 0, 0, 0.3)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, rgba(254, 254, 254, 0), rgba(0, 0, 0, 0.3)); /* 标准的语法（必须放在最后） */
+}
+.playCount > span {
+    margin-right: 5px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    float: right;
+}
+.playCount > img {
+    width: 14px;
+    height: 12px;
+    background-size: 14px 12px;
+    margin-top: 4px;
+    float: right;
+    margin-right: 5px;
+    overflow: hidden;
+}
+.hoverStyle {
+    background: url('../img/MiniPlayerPlayButton.png') no-repeat;
+    background-size: 30px 30px;
+}
+.moreTopMargin {
+    margin-top: 50px;
+}
+
+/* 新歌速递 */
+.songList_container {
+    width: 92%;
+    margin: 20px 4% 0px 4%;
+    height: 419px;
+}
+
+.songList {
+    width: 100%;
+    height: 332px;
+    border: 1px solid #e1e1e1;
+    margin-top: 20px;
+}
+.songList > ul > li {
+    width: 50%;
+    height: 30px;
+    float: left;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #222222;
+    background-color: #fafafa;
+}
+
+.songList>ul>li:nth-child(4n+1) {
+    background-color: white;
+}
+
+.songList>ul>li:nth-child(4n+2) {
+    background-color: white;
+}
+
+.songBar {
+    width: 100%;
+    height: 30px;
+    background-color: #fafafa;
+    font-size: 13px;
+    line-height: 30xp;
+}
+.songBar > span {
+    display: inline-block;
+    margin-left: 15px;
+    height: 30px;
+}
+
+
+

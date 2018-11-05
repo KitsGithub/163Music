@@ -1,0 +1,107 @@
+/* 汉仪简体 */
+@font-face {
+    font-family: 'HYWenHei-HEW';
+    src: url('../assets/HYWenHei-45W.ttf');
+}
+* { margin: 0px;padding: 0px;border: 0px;list-style: none;font-family: 'HYWenHei-HEW';}
+
+.relative {position: relative;}
+.margin_left_0 {margin-left: 0px !important;}
+.margin_top_40 {margin-top: 40px !important;}
+html,
+body {
+    background: white;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.float-left {
+    float: left;
+}
+.float-rigth {
+    float: right;
+}
+
+.fullscreen,
+.minimal,
+.settings,
+.close {
+    cursor: pointer;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    text-indent: -10000px;
+    left: 10px;
+    top: 4px;
+    z-index: 1;
+}
+.no-drag {
+    -webkit-app-region: no-drag;
+}
+
+.mainWindow {
+    width: 100%;
+    height: 545px;
+    overflow-y:scroll;
+}
+.subWindow {
+    width: 100%;
+}
+
+/* element 样式调整 */
+.el-menu-item-group__title {
+    color: #777777;
+    padding: 5px 0px 5px 10px !important;
+}
+.el-menu-item,
+.el-submenu__title {
+    height: 30px;
+    line-height: 30px;
+    color: black;
+}
+.el-menu-item:focus,
+.el-menu-item:hover {
+    background-color: #e3e3e3;
+}
+.el-menu-item.is-active {
+    color: black;
+}
+
+/* 菜单栏 */
+.el-tabs__active-bar {
+    display: none;
+}
+.el-tabs__item.is-active {
+    color: #b72712;
+}
+.el-tabs__item {
+    height: 43px;
+    line-height: 43px;
+}
+.el-tabs__nav-wrap::after {
+    background-color: #e1e1e1;
+    height: 1px;
+}
+.el-tabs__item:hover {
+    color: #b72712;
+}
+
+/* banner样式 */
+.el-carousel__item--card {
+    width: 60%;
+    height: 170px;
+}
+.el-carousel__button {
+    background-color: #e1e1e1;
+    width: 7px;
+    height: 7px;
+    border-radius: 3.5px;
+}
+.el-carousel__indicator.is-active button {
+    background-color: #b72712;
+}
+.el-carousel__item--card.is-active {
+    transform: translateX(145px) scale(1) !important;
+}
