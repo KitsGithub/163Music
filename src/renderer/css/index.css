@@ -7,7 +7,9 @@
 
 .relative {position: relative;}
 .margin_left_0 {margin-left: 0px !important;}
+.margin_left_20 {margin-left: 20px !important;}
 .margin_top_40 {margin-top: 40px !important;}
+.margin_bottom_20 {margin-bottom: 20px !important;}
 html,
 body {
     background: white;
@@ -104,4 +106,9 @@ body {
 }
 .el-carousel__item--card.is-active {
     transform: translateX(145px) scale(1) !important;
+}
+
+/* 按钮样式 */
+.el-button {
+    padding: 0px;
 }

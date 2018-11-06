@@ -101,7 +101,7 @@
     left: 0px;
 }
 .playCount {
-    width: 50%;
+    width: 60%;
     height: 20px;
     text-align: right;
     position: absolute;
@@ -139,6 +139,65 @@
     margin-top: 50px;
 }
 
+.recommendation {
+    height: 350px;
+}
+
+/* 个性化推荐 */
+.recommendationItems {
+    width: 48%;
+    height: 140px;
+    position: relative;
+}
+.recommendationItems .cover {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+}
+
+.recommendationItems .recommendationImg  {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    border: 1px solid #bfbfbf;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.recommendationItems .recommendationImg > img {
+    width: 120px;
+    height: 120px;
+}
+
+.recommendationItems > div>div > h3 {
+    margin-left: 20px;
+    margin-top: 35px;
+    font-size: 15px;
+    color: black;
+}
+.recommendationItems>div>div>h4 {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #707070;
+}
+
+.recommendationTitle {
+    width: 50%;
+    height: 100%;
+    font-size: 15px;
+    color: black;
+}
+
+.borderBottom {
+    border-bottom: 1px solid #ededed;
+}
+.borderRight {
+    border-right: 1px solid #ededed;
+}
+
 /* 新歌速递 */
 .songList_container {
     width: 92%;
@@ -152,8 +211,11 @@
     border: 1px solid #e1e1e1;
     margin-top: 20px;
 }
+
+
+
 .songList > ul > li {
-    width: 50%;
+    width: 49%;
     height: 30px;
     float: left;
     font-size: 13px;
@@ -161,10 +223,60 @@
     line-height: 30px;
     color: #222222;
     background-color: #fafafa;
+    overflow: hidden;
+    position: relative;
 }
+
+.songList>ul>li .num {
+    padding-left: 10px;
+    color: #888888;
+    font-size: 12px;
+}
+
+.songList>ul>li .title {
+    color: #222222;
+    font-size: 12px;
+    padding-left: 10px;
+    font-weight: 500;
+}
+.songList>ul>li .subTitle {
+    color: #7f7f7f;
+    width: 100px;
+    font-size: 12px;
+    margin-left: 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.songList>ul>li .artists {
+    width: 65px;
+    position: absolute;
+    text-align: right;
+    right: 10px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.songList>ul>li .listHover {
+    width: 14px;
+    height: 14px;
+    background-color: #222222;
+    background: url('../img/MiniPlayerPlayButton.png') no-repeat;
+    background-size: 14px 14px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
 
 .songList>ul>li:nth-child(4n+1) {
     background-color: white;
+}
+
+.songList>ul>li:nth-child(2n+1) {
+    border-right: 1px solid #f3f3f3;
 }
 
 .songList>ul>li:nth-child(4n+2) {
@@ -177,11 +289,28 @@
     background-color: #fafafa;
     font-size: 13px;
     line-height: 30xp;
+    position: relative;
 }
 .songBar > span {
     display: inline-block;
     margin-left: 15px;
     height: 30px;
+}
+
+.songList .palyAll {
+    line-height: 30px;
+    height: 30px;
+    color: #222222;
+    margin-left: 30px;
+}
+.palyAllImg {
+    width: 15px;
+    height: 15px;
+    background: url('../img/MiniPlayerPlayButton.png') no-repeat;
+    background-size: 15px 15px;
+    margin-left: 10px;
+    position: absolute;
+    top: 7.5px;
 }
 
 

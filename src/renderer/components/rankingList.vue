@@ -1,6 +1,6 @@
 <template>
-    <div class="subWindow">
-        排行榜
+    <div class="subWindow backgroundColor">
+
     </div>
 </template>
 
@@ -8,7 +8,18 @@
     export default {
         data() {
             return {
-
+                menus : [
+                    {
+                        title:"官方榜",
+                        isActive: false,
+                        rooter:"",
+                    },
+                    {
+                        title:"全球榜",
+                        isActive: false,
+                        rooter:"",
+                    },
+                ]
             }
         }
     }
