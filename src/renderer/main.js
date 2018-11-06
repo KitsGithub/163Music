@@ -11,8 +11,9 @@ import  './css/index.css'
 import  './css/home.css'
 import  './css/color.css'
 import  './css/found.css'
-import  './css/recommend.css'
 
+import  './css/recommend.css'
+import  './css/rankingList.css'
 
 Vue.use(ipcRender)
 Vue.use(ElementUI) //新添加

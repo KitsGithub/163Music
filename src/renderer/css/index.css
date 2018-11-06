@@ -1,7 +1,12 @@
 /* 汉仪简体 */
 @font-face {
     font-family: 'HYWenHei-HEW';
-    src: url('../assets/HYWenHei-45W.ttf');
+    src: url('../assets/HYQiHei-45S.ttf');
+}
+/* 汉仪粗体 */
+@font-face {
+    font-family: 'HYWenHei-BLOD';
+    src: url('../assets/HYQiHei-80S.ttf');
 }
 * { margin: 0px;padding: 0px;border: 0px;list-style: none;font-family: 'HYWenHei-HEW';}
 
@@ -111,4 +116,15 @@ body {
 /* 按钮样式 */
 .el-button {
     padding: 0px;
+}
+/* .el-button--text {
+    color: black;
+} */
+/* .el-button--text:active {
+    color: black;
+} */
+
+
+.el-button--text:hover {
+    color: black;
 }
