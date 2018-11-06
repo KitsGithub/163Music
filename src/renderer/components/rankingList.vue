@@ -7,7 +7,7 @@
         </div>
         <div class="rankListContainer" v-show="!isGlobelType">
             <div class="listView float-left" v-for="(item,index) in List" :key="index">
-                <div class="itemHeader lightgreen">
+                <div class="itemHeader">
                     <img class="bgImg" src="../img/riseList.jpeg" v-show="index === 0">
                     <img class="bgImg" src="../img/newestList.png" v-show="index === 1">
                     <img class="bgImg" src="../img/originalList.jpg" v-show="index === 2">
@@ -29,7 +29,15 @@
             </div>
         </div>
         <div class="rankListContainer" v-show="isGlobelType">
-
+            <div class="personalItems float-left" v-for="(item,index) in globalList" :key="index">
+                <img :src="item.coverImgUrl" alt="">
+                <div class="playCount">
+                    <span>{{item.playCount}}</span>
+                    <img src="../img/Headset.png" alt="">
+                </div>
+                <!-- <div class="cover" @mouseover="mouseover" @mouseout="mouseout"></div> -->
+                <span>{{item.name}}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -90,6 +98,8 @@ import { debug } from 'util';
         beforeMount() {
 
             this.updateList()
+            // 获取所有榜单
+            this.getAllRankList()
         },
         methods: {
             getListData(idx,cb) {
@@ -126,7 +136,29 @@ import { debug } from 'util';
                 })
             },
 
+            // 获取所有榜单
+            getAllRankList() {
+                _Api.GET("toplist/detail",{limit:20}, data=>{
+                    console.log(data.list.length);
+                    this.globalList = data.list.slice(4,data.list.length);
+                    for (let i = 0; i < this.globalList.length; i++) {
+                        const item = this.globalList[i];
+                        item.playCount = Tools.Calculate(item.playCount)
+                    }
+                })
+            },
+
             // privied methods
+            // 鼠标进入事件
+            mouseover(event) {
+                let dom = event.target;
+                dom.classList.add("hoverStyle")
+            },
+            // 鼠标退出事件
+            mouseout(event) {
+                let dom = event.target;
+                dom.classList = ["cover"]
+            },
             barItemClick(index) {
                 this.activedIndex = index
                 this.isGlobelType = !this.isGlobelType;

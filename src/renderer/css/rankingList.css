@@ -116,3 +116,9 @@
     line-height: 40px;
     color: #777777;
 }
+
+/* 全球榜单 */
+.rankListContainer>.personalItems {
+    margin-top: 20px;
+    margin-left: 5%;
+}
