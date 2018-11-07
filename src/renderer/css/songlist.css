@@ -2,13 +2,16 @@
     border: 1px solid #d9d9d9;
     background-color: white;
     height: 28px;
-    width: 60px;
-    margin-left: 30px;
+    margin-left: 20px;
+    margin-top: 15px;
     color: #333333;
+    padding-left: 25px;
+    padding-right: 25px;
 }
-.el-button:focus,
-.el-button:active,
-.el-button:hover {
+
+.song .el-button:focus,
+.song .el-button:active,
+.song .el-button:hover {
     color: black;
     background-color: white;
     border-color: #d9d9d9;
@@ -44,6 +47,45 @@
     overflow: hidden;
 }
 
+/* popoverLeft布局 */
+.popoverLeft > .itemView {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+.popoverLeft>.itemView>.item {
+    height: 50px;
+    font-family: 'HYWenHei-BLOD';
+}
+/* popoverRight布局 */
+.popoverRight>.tpyeView {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.tpyeView > .typeButton {
+    border: 0px;
+    margin-left: 10px;
+    padding-right: 10px;
+    border-radius: 0px;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.tagActived {
+    background-color: #afafaf;
+    color: white;
+}
+
+.tpyeView>.typeButton:hover,
+.tpyeView>.typeButton:active,
+.tpyeView>.typeButton:focus {
+    background-color: #afafaf;
+    color: white;
+}
+
+
 .hotTagView {
     margin-top: 10px;
     padding-left: 30px;
@@ -61,4 +103,13 @@
     border-radius: 0px;
     background-color: #fafafa;
     font-size: 13px;
+}
+
+/* 表格布局 */
+.songListView {
+    width: 100%;
+}
+
+.songListView >.item {
+
 }
