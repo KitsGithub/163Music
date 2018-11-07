@@ -117,14 +117,11 @@ body {
 .el-button {
     padding: 0px;
 }
-/* .el-button--text {
-    color: black;
-} */
-/* .el-button--text:active {
-    color: black;
-} */
-
-
 .el-button--text:hover {
     color: black;
+}
+
+/* popover样式 */
+.el-popover {
+    padding: 0px;
 }

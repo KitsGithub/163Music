@@ -12,8 +12,9 @@ import  './css/home.css'
 import  './css/color.css'
 import  './css/found.css'
 
-import  './css/recommend.css'
-import  './css/rankingList.css'
+import  './css/recommend.css'   //推荐
+import  './css/rankingList.css' //排行榜
+import  './css/songlist.css'    //歌单
 
 Vue.use(ipcRender)
 Vue.use(ElementUI) //新添加

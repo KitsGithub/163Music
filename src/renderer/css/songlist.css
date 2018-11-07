@@ -1,0 +1,64 @@
+.listButton {
+    border: 1px solid #d9d9d9;
+    background-color: white;
+    height: 28px;
+    width: 60px;
+    margin-left: 30px;
+    color: #333333;
+}
+.el-button:focus,
+.el-button:active,
+.el-button:hover {
+    color: black;
+    background-color: white;
+    border-color: #d9d9d9;
+}
+
+.popoverView {
+    width: 649px;
+    height: 488px;
+}
+.popoverView>.popoverTop {
+    width: 647px;
+    height: 58px;
+    border: 1px solid #e1e1e1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+}
+.popoverView>.popoverLeft {
+    width: 99px;
+    height: 429px;
+    border-left: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    border-bottom-left-radius: 5px;
+    overflow: hidden;
+}
+.popoverView>.popoverRight {
+    width: 547px;
+    height: 429px;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    border-bottom-right-radius: 5px;
+    overflow: hidden;
+}
+
+.hotTagView {
+    margin-top: 10px;
+    padding-left: 30px;
+}
+.hotTagView > span {
+    color: #555555;
+    font-size: 14px;
+    font-family: 'HYWenHei-BLOD';
+}
+.hotTagView >.hotButton {
+    border: 0px;
+    border-right: 1px solid #e1e1e1;
+    margin-left: 10px;
+    padding-right: 10px;
+    border-radius: 0px;
+    background-color: #fafafa;
+    font-size: 13px;
+}
