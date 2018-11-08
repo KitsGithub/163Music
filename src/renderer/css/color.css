@@ -1,5 +1,7 @@
 /* 主题色 */
 .themeColor {background-color: #b72712;}
+.themeTextColor {color: #b72712 !important;}
+.blueTextColor {color: #2b77ca !important;}
 .lightgreen {background-color: lightgreen;}
 .red {background-color: red;}
 .backgroundColor {background-color: #fafafa;}

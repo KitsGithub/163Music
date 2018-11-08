@@ -15,6 +15,7 @@ import  './css/found.css'
 import  './css/recommend.css'   //推荐
 import  './css/rankingList.css' //排行榜
 import  './css/songlist.css'    //歌单
+import  './css/radio.css'       //电台
 
 Vue.use(ipcRender)
 Vue.use(ElementUI) //新添加

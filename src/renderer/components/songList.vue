@@ -29,11 +29,11 @@
         </el-popover>
         <div class="hotTagView">
             <span>热门标签:</span>
-            <el-button v-for="(item,index) in hotTagList" :key="index" class="hotButton">
+            <el-button v-for="(item,index) in hotTagList" :key="index" class="hotButton" @click="closePopover(item.name)">
                 {{item.name}}
             </el-button>
         </div>
-        <div class="songListView lightgreen">
+        <div class="songListView">
             <div class="personalItems float-left" v-for="(item,index) in songList" :key="index">
                 <img :src="item.coverImgUrl" alt="">
                 <div class="playCount">
@@ -124,7 +124,6 @@ import { debug } from 'util';
                 if (!cat.length) {
                     return
                 }
-                // http://localhost:3000/top/playlist?limit=10&cat=%E5%8D%8E%E8%AF%AD
                 _Api.GET("top/playlist?cat=" + cat,{}, data => {
                     this.songList = data.playlists
 
