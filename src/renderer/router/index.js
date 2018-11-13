@@ -50,15 +50,14 @@ export default new Router({
           name: 'fm',
           component: () =>  import('../components/fm.vue')
         },
+        {
+          path: '/home/album',
+          name: "album",
+          component: () => import('../components/album.vue')
+        }
+
       ]
-
     },
-
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: require('../views/home/home.vue')
-    // },
     {
       path: '*',
       redirect: '/'

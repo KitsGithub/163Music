@@ -10,12 +10,13 @@ import ipcRender from './public/ipcRenderer'
 import  './css/index.css'
 import  './css/home.css'
 import  './css/color.css'
-import  './css/found.css'
 
+import  './css/found.css'       //发现
 import  './css/recommend.css'   //推荐
 import  './css/rankingList.css' //排行榜
 import  './css/songlist.css'    //歌单
 import  './css/radio.css'       //电台
+import  './css/album.css'       //专辑
 
 Vue.use(ipcRender)
 Vue.use(ElementUI) //新添加

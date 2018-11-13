@@ -24,12 +24,24 @@
         </div>
         <div class="hotRadio">
             <div class="personalTitle margin_bottom_20">
-                <span class="float-left" v-if="!currentRadioCat">热门电台</span>
+                <span class="float-left" v-if="!currentRadioCat">推荐电台</span>
                 <span class="float-left" v-else>优秀新电台</span>
             </div>
             <div class="itemContainer">
-                <div class="item float-left" v-for="(item,index) in programsList" :key="index">
-
+                <div class="item float-left" v-for="(item,index) in djprogramList" :key="index" :class="{radio_left_margin : index != 0}">
+                    <img :src="item.picUrl">
+                    <span>{{item.name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="allRadio">
+             <div class="personalTitle margin_bottom_20">
+                <span class="float-left">全部电台</span>
+            </div>
+            <div class="itemContainer">
+                <div class="item float-left" v-for="(item,index) in djprogramList" :key="index" :class="{radio_left_margin : index != 0}">
+                    <img :src="item.picUrl">
+                    <span>{{item.name}}</span>
                 </div>
             </div>
         </div>
@@ -45,14 +57,16 @@ import { debug } from 'util';
         data() {
             return {
                 catList:[],             //分类列表
-                programsList:[],       //推荐电台
+                programsList:[],        //推荐节目
+                djprogramList:[],        //推荐电台
                 currentRadioCat:null,    //当前选中类别
 
             }
         },
         beforeMount() {
-            this.getRadioCatList()
-            this.getRecommendRadio()
+            this.getRadioCatList()          //获取节目分类
+            this.getRecommendRadio()        //获取推荐节目
+            this.getPersonalizedRadio()     //获取推荐电台
         },
         methods: {
             // 获取电台分类
@@ -82,6 +96,13 @@ import { debug } from 'util';
             getRecommendRadio() {
                 _Api.GET("program/recommend?limit=4",{}, data => {
                     this.programsList = data.programs
+                })
+            },
+
+            // 获取推荐电台
+            getPersonalizedRadio() {
+                _Api.GET("personalized/djprogram?limit=5",{}, data => {
+                    this.djprogramList = data.result.splice(0,5)
                 })
             },
 

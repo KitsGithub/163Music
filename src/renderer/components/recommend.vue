@@ -17,7 +17,7 @@
             <div class="personalTitle">
                 <span>热门精选</span>
             </div>
-            <div class="personalItems float-left" v-for="(item,index) in personalizedList" :key="index" :class="{moreTopMargin : index>=4, margin_left_0 : (index === 0 || index === 4)}">
+            <div class="personalItems float-left" @click="personalItemClick(item)" v-for="(item,index) in personalizedList" :key="index" :class="{moreTopMargin : index>=4, margin_left_0 : (index === 0 || index === 4)}">
                 <img :src="item.picUrl" alt="">
                 <div class="playCount">
                     <span>{{item.playCount}}</span>
@@ -131,6 +131,13 @@ import { debug } from 'util';
                     response => {
                         this.newSongList = response.data.slice(0,20);
                     })
+            },
+
+
+            // item 的点击事件
+            personalItemClick(item) {
+                console.log("item点击了");
+                this.$router.push("/home/album")
             },
 
             // 鼠标进入事件

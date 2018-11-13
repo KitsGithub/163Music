@@ -102,7 +102,7 @@
 
       handleSelect(key, keyPath) {
         if (key === "find") {
-          this.$router.push("/home/found");
+          this.$router.push("/home/found/recommend");
         } else if (key === "fm") {
           this.$router.push("/home/fm");
         }
