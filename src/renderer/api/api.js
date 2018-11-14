@@ -29,7 +29,6 @@ export default {
                 params
             })
             .then((response) => {
-                console.log('GET##接口url：' + requestURL + '\n##请求参数\n' + JSON.stringify(params));
                 //判断接口规范
                 if (response.status === 200) {
                     callback(response.data);

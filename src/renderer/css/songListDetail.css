@@ -1,0 +1,131 @@
+.songListDetail>.header {
+    width: 100%;
+    height: 270px;
+    display: flex;
+}
+/* 歌单头部左侧 */
+.songListDetail>.header>.left {
+    width: 210px;
+    height: 100%;
+}
+.songListDetail>.header>.left img {
+    width: 180px;
+    height: 180px;
+    background-size: 180px 180px;
+    margin: 30px 0 0 30px;
+}
+/* 歌单头部右侧 */
+.songListDetail>.header>.right {
+    height: 180px;
+    flex: 1;
+    margin-left: 30px;
+    position: relative;
+}
+/* 右侧歌单名字部分 */
+.songListDetail>.header>.right >.songListName {
+    margin-top: 30px;
+}
+.songListDetail>.header>.right>.songListName span {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #b92500;
+    color: white;
+}
+.songListDetail>.header>.right>.songListName h3 {
+    display: inline;
+}
+
+/* 头部右侧创建人 */
+.songListDetail>.header>.right>.creator {
+    overflow: hidden;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.songListDetail>.header>.right>.creator img {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    float: left;
+}
+
+.songListDetail>.header>.right>.creator div {
+    line-height: 30px;
+    height: 30px;
+    margin-left: 5px;
+
+}
+.songListDetail>.header>.right>.creator >.name {
+    font-size: 13px;
+    color: #222222;
+    font-weight: 600;
+}
+.songListDetail>.header>.right>.creator>.createTime {
+    font-size: 11px;
+    margin-top: 1px;
+    color: #888888;
+}
+
+/* 头部右侧标签部分 */
+.songListDetail>.header>.right>.tags {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    /* background-color: orange; */
+}
+.songListDetail>.header>.right>.tags .title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0px;
+    color: #555555;
+}
+.songListDetail>.header>.right>.tags >.div {
+    height: 30px;
+    line-height: 30px;
+}
+.songListDetail>.header>.right>.tags .tag {
+    font-size: 13px;
+    color: #3b8bcc;
+}
+
+/* 歌单部分 */
+.songListDetail>.songListView {
+    width: 100%;
+    height: 780px;
+}
+.songListDetail>.songListView>.options {
+    height: 33px;
+    border-bottom: 2px solid #b92500;
+}
+.songListDetail>.songListView>.options div {
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #c8c8c8;
+    border-bottom: 0px;
+    height: 32px;
+    background: #f4f4f4;
+    margin-left: 3px;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.songListDetail>.songListView>.options div.marginLeft {
+    margin-left: 27px;
+}
+.songListDetail>.songListView>.options div.optionActived {
+    background-color: #b92500;
+    color: white;
+    font-weight: 600;
+}
+
+.songListDetail .tableCell_songName {
+    color: #222222;
+}
+.songListDetail .tableCell_songer {
+    color: #555555;
+}

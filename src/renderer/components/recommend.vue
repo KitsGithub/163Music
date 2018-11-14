@@ -136,8 +136,8 @@ import { debug } from 'util';
 
             // item 的点击事件
             personalItemClick(item) {
-                console.log("item点击了");
-                this.$router.push("/home/album")
+                console.log(JSON.stringify(item));
+                this.$router.push("/home/songListDetail?id=" + item.id + "&&tpye=\"专辑\"&&picUrl=" + item.picUrl + "&&name=" + item.name)
             },
 
             // 鼠标进入事件

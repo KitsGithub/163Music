@@ -54,6 +54,11 @@ export default new Router({
           path: '/home/album',
           name: "album",
           component: () => import('../components/album.vue')
+        },
+        {
+          path: '/home/songListDetail',
+          name: "songListDetail",
+          component: () => import('../components/songListDetail.vue')
         }
 
       ]

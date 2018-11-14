@@ -125,3 +125,11 @@ body {
 .el-popover {
     padding: 0px;
 }
+
+/* el-table 样式 */
+.el-table td {
+    padding: 0px;
+    height: 30px;
+    font-size: 13px;
+    color: #888888;
+}

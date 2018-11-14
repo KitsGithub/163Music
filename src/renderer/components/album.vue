@@ -1,4 +1,5 @@
 <template>
+    <!-- 专辑 -->
     <div class="album">
         <div class="header lightgreen">
 

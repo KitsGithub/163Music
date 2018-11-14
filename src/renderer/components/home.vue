@@ -1,5 +1,5 @@
 <template>
-  <div id="wapper">
+  <div class="wapper">
     <div id="funtion-bar" class="funtion-bar themeColor">
       <div class="systemFuntion">
         <i class="funtion-btn no-drag close" @click="closeWindow"></i>
@@ -21,12 +21,12 @@
         </el-menu-item-group>
       </el-menu>
     </div>
-    <div class="right-side-container float-left">
+    <div class="right-side-container">
       <router-view></router-view>
     </div>
-    <div class="footer-container float-left">
+    <!-- <div class="footer-container float-left">
 
-    </div>
+    </div> -->
   </div>
 </template>
 

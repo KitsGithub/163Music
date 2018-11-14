@@ -16,7 +16,8 @@ import  './css/recommend.css'   //推荐
 import  './css/rankingList.css' //排行榜
 import  './css/songlist.css'    //歌单
 import  './css/radio.css'       //电台
-import  './css/album.css'       //专辑
+import  './css/album.css'       //专辑详情
+import  './css/songListDetail.css'  //歌单详情
 
 Vue.use(ipcRender)
 Vue.use(ElementUI) //新添加
