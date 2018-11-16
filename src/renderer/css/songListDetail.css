@@ -125,7 +125,9 @@
 
 .songListDetail .tableCell_songName {
     color: #222222;
+    font-weight: 600;
 }
 .songListDetail .tableCell_songer {
     color: #555555;
+    font-weight: bold;
 }

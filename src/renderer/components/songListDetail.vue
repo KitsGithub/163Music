@@ -32,6 +32,7 @@
                 style="width: 100%"
                 stripe
                 :cell-class-name="cellClass"
+                @row-click="tableRowClick"
             >
                 <el-table-column v-for="(item,index) in tableColumns" :key="index"
                     :prop="item.props"
@@ -75,7 +76,7 @@
             this.tableColumns = [
                 {label:"",props:"index",width:"60"},
                 {label:"操作",props:"",width:"50"},
-                {label:"音乐标题",props:"name",width:"350"},
+                {label:"音乐标题",props:"name",width:""},
                 {label:"歌手",props:"ar",width:"150"},
                 {label:"专辑",props:"al",width:"200"},
                 {label:"时长",props:"time",width:"100"}
@@ -102,9 +103,25 @@
                             ar: song.ar[0].name,
                             al: song.al.name,
                             time: this.changeToMin(song.dt),
+                            id : song.id
                         })
                     }
                 })
+            },
+            getMusicURL(id,cb) {
+                if (id.length) {
+                    return
+                }
+                _Api.GET("check/music?id="+id,{}, data => {
+                    if (data.success) {
+                        _Api.GET('song/url?id='+id,{}, data2 => {
+                            cb(data2.data)
+                        })
+                    } else {
+                        cb(null)
+                    }
+                })
+
             },
             changeToMin(ms) {
                 let min = Math.floor((ms/1000/60) << 0);
@@ -121,6 +138,19 @@
                     element.isActived = false;
                 }
                 item.isActived = true;
+            },
+            tableRowClick(row, event, column) {
+                console.log(row);
+                this.getMusicURL(row.id, data => {
+                    console.log(data[0]);
+                    console.log(data[0].url);
+                    let audio = new Audio()
+
+                    // audio.src = 'http://music.163.com/song/media/outer/url?id=' + row.id + '.mp3'
+                    audio.src = data.url
+                    audio.play();
+                })
+
             },
 
             cellClass({row, column, rowIndex, columnIndex}) {

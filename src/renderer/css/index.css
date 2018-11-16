@@ -127,6 +127,7 @@ body {
 }
 
 /* el-table 样式 */
+.el-table th,
 .el-table td {
     padding: 0px;
     height: 30px;
