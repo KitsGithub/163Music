@@ -87,6 +87,8 @@
     width: 100%;
     height: 65px;
     border-top: 1px solid #c5c5c5;
+    position: absolute;
+    bottom: 0px;
 }
 
 /* .left-side-container >
@@ -101,5 +103,24 @@
 .findMusic {
     background: url('../img/fineMusic.jpg') no-repeat;
     background-size: 32px 30px;
+}
+
+/* 搜索栏 */
+.sarchView {
+    width: 300px;
+    height: 25px;
+    background-color: yellow;
+    margin-left: 73px;
+    margin-top: 5px;
+}
+
+/* 用户信息 */
+.userView {
+    width: 65px;
+    height: 60px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-left: 1px solid #a21b02;
 }
 

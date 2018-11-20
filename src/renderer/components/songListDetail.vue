@@ -66,6 +66,7 @@
                 ],
                 tableColumns:[],
                 songListDate:[],
+                musicURL:"",
 
             }
         },
@@ -140,15 +141,8 @@
                 item.isActived = true;
             },
             tableRowClick(row, event, column) {
-                console.log(row);
                 this.getMusicURL(row.id, data => {
-                    console.log(data[0]);
-                    console.log(data[0].url);
-                    let audio = new Audio()
-
-                    // audio.src = 'http://music.163.com/song/media/outer/url?id=' + row.id + '.mp3'
-                    audio.src = data.url
-                    audio.play();
+                    this.$emit('playMusic', { musicList : data})
                 })
 
             },

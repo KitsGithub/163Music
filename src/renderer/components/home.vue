@@ -8,6 +8,12 @@
       </div>
       <div>
         <div class="wyy wyyIcon float-left"></div>
+        <div class="sarchView float-left">
+
+        </div>
+        <div class="userView">
+
+        </div>
       </div>
     </div>
     <div class="left-side-container float-left">
@@ -22,20 +28,22 @@
       </el-menu>
     </div>
     <div class="right-side-container">
-      <router-view></router-view>
+      <router-view @playMusic="playMusic"></router-view>
     </div>
-    <!-- <div class="footer-container float-left">
-
-    </div> -->
+    <div class="footer-container">
+      <VueAudio :musicList="musicList"></VueAudio>
+    </div>
   </div>
 </template>
 
 <script>
-
+  import VueAudio from './VueAudio'
 	var ipcRenderer = require('electron').ipcRenderer
-  	export default {
-    	name: 'home',
-		components: {},
+  export default {
+    name: 'home',
+    components: {
+      'VueAudio' : VueAudio
+    },
 		data() {
 			return {
         menus:[
@@ -73,13 +81,19 @@
             title:"收藏的歌单",
             subMenus:[]
           }
-        ]
+        ],
+        musicList: [],  //播放音乐数组
 			}
 		},
     methods: {
       //打开外部链接
 			open (link) {
 				this.$electron.shell.openExternal(link)
+      },
+
+      playMusic({musicList}) {
+        console.log("播放音乐");
+        this.musicList = musicList
       },
 
       // 关闭窗口
