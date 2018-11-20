@@ -100,7 +100,6 @@
       }
     },
     beforeMount() {
-      debugger
       if (this.musicList.length) {
         this.currentIndex = 0
         this.url = this.musicList[this.currentIndex].url
