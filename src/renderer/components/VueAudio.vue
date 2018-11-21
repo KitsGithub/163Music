@@ -52,7 +52,12 @@
 
   export default {
     props: {
-      musicList: [],
+      music: {
+        type: Array,
+        default () {
+          return []
+        }
+      },
       theSpeeds: {
         type: Array,
         default () {
@@ -75,7 +80,7 @@
           playing: false,
           muted: false,
           speed: 1,
-          waiting: true,
+          waiting: false,
           preload: 'auto'
         },
 
@@ -100,17 +105,16 @@
       }
     },
     beforeMount() {
-      if (this.musicList.length) {
+      if (this.music.length) {
         this.currentIndex = 0
-        this.url = this.musicList[this.currentIndex].url
+        this.url = this.music[this.currentIndex].url
       }
 
     },
     watch: {
-      musicList() {
-        console.log('url更新');
+      music() {
         this.currentIndex = 0
-        this.url = this.musicList[this.currentIndex].url
+        this.url = this.music[this.currentIndex].url
       }
     },
     methods: {
@@ -166,7 +170,7 @@
       },
       // 当发生错误, 就出现loading状态
       onError () {
-        this.audio.waiting = true
+        // this.audio.waiting = true
       },
       // 当音频开始等待
       onWaiting (res) {
@@ -211,12 +215,12 @@
       endPlay() {
         console.log('播放结束--播放下一首');
 
-        if (this.musicList.length) {
-          if (this.currentIndex === (this.musicList.length -1)) {
+        if (this.music.length) {
+          if (this.currentIndex === (this.music.length -1)) {
             return
           }
           this.currentIndex++;
-          this.url = this.musicList[this.currentIndex].url
+          this.url = this.music[this.currentIndex].url
         }
 
 

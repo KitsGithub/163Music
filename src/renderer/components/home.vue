@@ -12,7 +12,7 @@
 
         </div>
         <div class="userView">
-
+          <img @click="userIconClick" class="user userIcon">
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <router-view @playMusic="playMusic"></router-view>
     </div>
     <div class="footer-container">
-      <VueAudio :musicList="musicList"></VueAudio>
+      <VueAudio :music="musicList"></VueAudio>
     </div>
   </div>
 </template>
@@ -91,9 +91,18 @@
 				this.$electron.shell.openExternal(link)
       },
 
+      // 播放音乐
       playMusic({musicList}) {
         console.log("播放音乐");
         this.musicList = musicList
+      },
+
+
+
+      // 点击用户头像
+      userIconClick() {
+        console.log('头像点击');
+        ipcRenderer.send('open-login-window')
       },
 
       // 关闭窗口

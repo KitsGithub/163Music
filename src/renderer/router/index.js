@@ -59,9 +59,14 @@ export default new Router({
           path: '/home/songListDetail',
           name: "songListDetail",
           component: () => import('../components/songListDetail.vue')
-        }
+        },
 
       ]
+    },
+    {
+      path: '/login',
+      name: "login",
+      component: () => import('../views/login/login.vue')
     },
     {
       path: '*',

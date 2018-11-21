@@ -3,6 +3,8 @@ import {
   BrowserWindow,
   ipcMain
 } from 'electron'
+import { debug } from 'util';
+
 
 /**
  * Set `__static` path to static files in production
@@ -22,8 +24,8 @@ function createWindow () {
    * Initial window options
    */
 	mainWindow = new BrowserWindow({
-    height: 670,
-    width: 1002,
+		height: 670,
+		width: 1002,
 		useContentSize: true,
 		webPreferences: { webSecurity: false }, // 可实现跨域
 		frame: false // 去掉浏览器头
@@ -60,12 +62,44 @@ ipcMain.on('hide-window', () => {
 })
 // 最大化
 ipcMain.on('show-window', () => {
-  mainWindow.maximize()
+	mainWindow.maximize()
 })
 // 还原
 ipcMain.on('orignal-window', () => {
 	mainWindow.unmaximize()
 })
+
+
+// 打开登录界面
+var loginWindow = null;
+var loginURL = 'http://localhost:9080/#/login'
+ipcMain.on('open-login-window', () => {
+	if (loginWindow) {
+		return
+	}
+
+	loginWindow = new BrowserWindow({
+		width: 350,
+		height: 500,
+		frame: false, 	// 去掉浏览器头
+		useContentSize: true,
+	})
+	console.log(loginWindow);
+
+	loginWindow.loadURL(loginURL);
+
+	loginWindow.on('closed', function () {
+		loginWindow = null;
+	});
+})
+
+// 关闭登录界面
+ipcMain.on('close-login-window', () => {
+	if (loginWindow) {
+		loginWindow.close()
+	}
+})
+
 
 
 // ipcRenderer.on('close-main-window', function () {

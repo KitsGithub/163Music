@@ -40,6 +40,7 @@
     left: 30px;
 }
 
+
 .minimal:hover {
     background: url('../img/window_minimal_hover.png') no-repeat;
     background-size: 18px 18px;
@@ -122,5 +123,19 @@
     right: 0px;
     top: 0px;
     border-left: 1px solid #a21b02;
+}
+.userView .userIcon {
+    background: url('../img/default_user.png') no-repeat center;
+    background-size: 18px 18px;
+}
+.userView .user {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #d6d8da;
+    bottom: 10px;
+    left: 17px;
 }
 

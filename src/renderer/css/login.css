@@ -1,0 +1,51 @@
+.loginView {
+    width: 350px;
+    height: 500px;
+    -webkit-app-region: drag;
+}
+.loginView .loginClose {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+}
+
+.loginView .loginBJ {
+    width: 350px;
+    height: 200px;
+}
+
+.loginView>.btnView {
+    width: 100%;
+    height: 40px;
+}
+.loginView>.btnView> div {
+    width: 298px;
+    height: 38px;
+    border: 1px solid #d33d3e;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 40px;
+    color: #d33d3e;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.loginView>.btnView>.btn_login {
+
+}
+.loginView>.btnView>.btn_regiest {
+    margin-top: 10px;
+}
+
+.thirdPartyLoginView {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+}
+
