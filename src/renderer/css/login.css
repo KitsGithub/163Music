@@ -45,7 +45,132 @@
 .thirdPartyLoginView {
     position: absolute;
     width: 100%;
-    height: 100px;
+    height: 110px;
     bottom: 0;
 }
+
+.thirdPartyLoginView>.thirdPartyTitle {
+    width: 100%;
+    height: 30px;
+    position: relative;
+}
+.thirdPartyLoginView>.thirdPartyTitle>.loginTitle {
+    width: 100%;
+    font-size: 13px;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    height: 100%;
+    line-height: 30px;
+}
+
+.thirdPartyLoginView>.thirdPartyTitle>.line1 {
+    width: 85px;
+    height: 1px;
+    background-color: red;
+    top: 14.5px;
+    left: 44px;
+    position: absolute;
+
+    background: -webkit-linear-gradient(left, #eeeff1, #dbdbdb);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #eeeff1, #dbdbdb);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #eeeff1, #dbdbdb);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #eeeff1, #dbdbdb);
+    /* 标准的语法（必须放在最后） */
+}
+
+.thirdPartyLoginView>.thirdPartyTitle>.line2 {
+    width: 85px;
+    height: 1px;
+    background-color: red;
+    top: 14.5px;
+    right: 44px;
+    position: absolute;
+
+    background: -webkit-linear-gradient(left, #dbdbdb, #eeeff1);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #dbdbdb, #eeeff1);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #dbdbdb, #eeeff1);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #dbdbdb, #eeeff1);
+    /* 标准的语法（必须放在最后） */
+}
+
+.thirdPartyLoginView .item {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.thirdPartyLoginView .item> img {
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+}
+
+.thirdPartyLoginView .item> div {
+    font-size: 12px;
+    color: #999999;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* 手机登录 */
+.loginView .backButton {
+    color: #686868;
+    font-size: 13px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.loginView .login_input_c {
+    width: 260px;
+    height: 78px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.loginView .login_input_c>.phone {
+    width: 100%;
+    height: 39px;
+    border-bottom: 1px solid #d9d9d9;
+    overflow: hidden;
+}
+.loginView .login_input_c>.phone> el-input {
+    width: 180px;
+    height: 39px;
+    border: 0px;
+}
+
+.loginView .login_input_c>.phone>span {
+    display: inline-block;
+    line-height: 39px;
+    color: black;
+    font-size: 13px;
+}
+.loginView .login_input_c>.password {
+    width: 100%;
+    height: 39px;
+}
+.loginView .login_input_c>div > img {
+    width: 13px;
+    height: 16px;
+    background-size: 10px 16px;
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
 
