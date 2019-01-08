@@ -1,5 +1,5 @@
 <template>
-  <div class="di main-wrap" v-loading="audio.waiting">
+  <div class="di" v-loading="audio.waiting">
     <!-- 这里设置了ref属性后，在vue组件中，就可以用this.$refs.audio来访问该dom元素 -->
     <audio ref="audio" class="dn"
     :src="url" :preload="audio.preload"
@@ -12,21 +12,38 @@
     autoplay="autoplay"
     @ended="endPlay"
     ></audio>
-    <div>
-      <el-button type="text" @click="startPlayOrPause">{{audio.playing | transPlayPause}}</el-button>
-      <el-button v-show="!controlList.noSpeed" type="text" @click="changeSpeed">{{audio.speed | transSpeed}}</el-button>
+    <div class="audio_container">
+      <!-- <el-button type="text" @click="startPlayOrPause">{{audio.playing | transPlayPause}}</el-button> -->
+      <img class="optionButton" src="../img/prevButton.jpeg" alt="">
+      <!-- <el-button type="text" > -->
+        <img class="playButton" src="../img/stopButton.jpeg" @click="startPlayOrPause" v-show="audio.playing">
+        <img class="playButton" src="../img/playButton.jpeg" @click="startPlayOrPause" v-show="!audio.playing">
+      <!-- </el-button> -->
 
-      <el-tag type="info">{{ audio.currentTime | formatSecond}}</el-tag>
-
-      <el-slider v-show="!controlList.noProcess" v-model="sliderTime" :format-tooltip="formatProcessToolTip" @change="changeCurrentTime" class="slider"></el-slider>
-
-      <el-tag type="info">{{ audio.maxTime | formatSecond }}</el-tag>
-
-      <el-button v-show="!controlList.noMuted" type="text" @click="startMutedOrNot">{{audio.muted | transMutedOrNot}}</el-button>
-
-      <el-slider v-show="!controlList.noVolume" v-model="volume" :format-tooltip="formatVolumeToolTip" @change="changeVolume" class="slider"></el-slider>
-
-      <a :href="url" v-show="!controlList.noDownload" target="_blank" class="download" download>下载</a>
+      <img class="optionButton" src="../img/nextButton.jpeg" alt="">
+      <el-slider
+        class="slider"
+        v-model="sliderTime"
+        :format-tooltip="formatProcessToolTip"
+        @change="changeCurrentTime">
+      </el-slider>
+      <!-- <el-tag type="info">{{ audio.currentTime | formatSecond}}</el-tag> -->
+      <div class="time_container">
+        <span>{{ audio.currentTime | formatSecond}}</span>
+        <span>/</span>
+        <span>{{ audio.maxTime | formatSecond}}</span>
+      </div>
+      <div class="volume_container">
+        <img src="../img/volume.png" v-show="volume">
+        <img src="../img/volume_stop.png" v-show="volume === 0">
+        <el-slider
+          class="volumeSlider"
+          v-model="volume"
+          :format-tooltip="formatVolumeToolTip"
+          @change="changeVolume">
+        </el-slider>
+      </div>
+      <div class="other_container"></div>
     </div>
   </div>
 </template>
@@ -34,7 +51,6 @@
 <script>
   function realFormatSecond(second) {
     var secondType = typeof second
-
     if (secondType === 'number' || secondType === 'string') {
       second = parseInt(second)
       second = parseInt(second)
@@ -85,7 +101,7 @@
         },
 
         sliderTime: 0,
-        volume: 100,
+        volume: 80,
         speeds: this.theSpeeds,
 
         controlList: {
@@ -126,18 +142,10 @@
           }
         })
       },
-      changeSpeed() {
-        let index = this.speeds.indexOf(this.audio.speed) + 1
-        this.audio.speed = this.speeds[index % this.speeds.length]
-        this.$refs.audio.playbackRate = this.audio.speed
-      },
-      startMutedOrNot() {
-        this.$refs.audio.muted = !this.$refs.audio.muted
-        this.audio.muted = this.$refs.audio.muted
-      },
+
       // 音量条toolTip
       formatVolumeToolTip(index) {
-        return '音量条: ' + index
+        return index
       },
       // 进度条toolTip
       formatProcessToolTip(index = 0) {
@@ -236,9 +244,6 @@
       transMutedOrNot(value) {
         return value ? '放音' : '静音'
       },
-      transSpeed(value) {
-        return '快进: x' + value
-      }
     },
     created() {
       this.setControlList()
@@ -249,28 +254,76 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .main-wrap{
-    padding: 10px 15px;
+  .audio_container {
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 100%;
   }
+
+
+  .audio_container .optionButton {
+    width: 34px;
+    height: 34px;
+    background-size: 34px 34px;
+    margin-left: 23px;
+    margin-top: 15px;
+  }
+
+  .audio_container .playButton {
+    width: 38px;
+    height: 38px;
+    background-size: 38px 38px;
+    padding-left: 23px;
+    margin-top: 13px;
+  }
+
+  .audio_container .time_container {
+    display: inline-block;
+    margin-left: 10px;
+    top: 21px;
+    position: absolute;
+  }
+  .audio_container .time_container>span {
+    font-size: 11px;
+    color: #888888;
+  }
+
   .slider {
     display: inline-block;
-    width: 100px;
+    width: 400px;
     position: relative;
-    top: 14px;
-    margin-left: 15px;
+    /* top: 14px; */
+    margin-left: 30px;
+  }
+
+  .audio_container .volume_container {
+    display: inline-block;
+    margin-left: 120px;
+    position: relative;
+  }
+  .audio_container .volume_container>img {
+    width: 20px;
+    height: 20px;
+    background-color: 20px 20px;
+    position: absolute;
+    top: 8px;
+  }
+  .audio_container .volume_container>.volumeSlider {
+    display: inline-block;
+    width: 97px;
+    position: relative;
+    margin-left: 30px;
   }
 
   .di {
-    display: inline-block;
+    height: 65px;
+    width: 100%;
   }
 
-  .download {
-    color: #409EFF;
-    margin-left: 15px;
-  }
 
   .dn{
     display: none;
+
   }
 
 </style>

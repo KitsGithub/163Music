@@ -23,7 +23,7 @@
                     <span>{{item.playCount}}</span>
                     <img src="../img/Headset.png" alt="">
                 </div>
-                <div class="cover" @mouseover="mouseover" @mouseout="mouseout"></div>
+                <!-- <div class="cover" @mouseover="mouseover" @mouseout="mouseout"></div> -->
                 <span>{{item.name}}</span>
             </div>
         </div>
@@ -54,7 +54,7 @@
                         <h4>{{item.copywriter}}</h4>
                     </div>
                 </div>
-                <div class="cover" @mouseover="mouseover" @mouseout="mouseout"></div>
+                <!-- <div class="cover" @mouseover="mouseover" @mouseout="mouseout"></div> -->
             </div>
         </div>
         <div class="songList_container">
@@ -113,15 +113,11 @@ import { debug } from 'util';
                             for (let i = 0; i < this.personalizedList.length; i++) {
                                 const item = this.personalizedList[i];
                                 item.playCount = Tools.Calculate(item.playCount)
-
                                 if (i === 0 || i === 2 || i === 4 || i === 6) {
                                     this.recommendationList.push(item)
                                 }
                             }
-
-
                         }
-
                     })
             },
 

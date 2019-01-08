@@ -67,13 +67,6 @@ export default new Router({
       path: '/login',
       name: "login",
       component: () => import('../views/login/login.vue'),
-      children: [
-        {
-          path: '/login/mobileLogin',
-          name: 'mobileLogin',
-          component: () => import('../views/login/mobileLogin.vue')
-        },
-      ]
     },
     {
       path: '*',
